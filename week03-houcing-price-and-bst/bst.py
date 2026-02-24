@@ -5,6 +5,7 @@ class TreeNode:
         self.data = data
         self.left = None 
         self.right = None 
+        self.parent = None 
 
     def __str__(self):
         return str(self.data) 
@@ -12,6 +13,21 @@ class TreeNode:
 class BST:
     def __init__(self):
         self.root = None 
+
+    def max(self):
+        pass 
+
+    def min(self):
+        pass 
+
+    def predecessor(self, node):
+        pass
+
+    def succesor(self, node):
+        pass
+
+    def remove(self, value):
+        pass
 
     def display(self):
         self.inorder(self.root)
@@ -33,12 +49,14 @@ class BST:
                 if iter.data > data:
                     if iter.left is None:
                         iter.left = node 
+                        node.parent = iter
                         break
                     else:
                         iter = iter.left 
                 else:
                     if iter.right is None:
                         iter.right = node 
+                        node.parent = iter
                         break 
                     else:
                         iter = iter.right
